@@ -42,13 +42,13 @@
 - SSE는 재연결 기능을 제공하기 때문에 연결이 끊어졌을 때 자동으로 다시 연결 시도
 - SSE는 이벤트 스트림 형태로 데이터를 전송, 클라이언트는 이벤트를 수신하여 처리가능
 - 통신 과정
-    - Client 측 - SSE Subscribe 요청
+    - Client 측 SSE Subscribe 요청
         - 클라이언트가 서버의 이벤트를 구독하기 위한 요청을 전송
         - 이벤트의 mediaType은 text/event-stream이 표준 스펙
-    - Server 측 - Subscription에 대한 응답
+    - Server 측 Subscription에 대한 응답
         - Response의 mediaType은 text/event-stream.
         - 서버는 동적으로 생성된 컨텐츠를 스트리밍하기 때문에 본문의 크기를 미리 알 수 없으므로 Transfer-Encoding 헤더 값을 chunked로 설정해야 한다.
-    - Server 측 - 이벤트 생성 및 전송
+    - Server 측 이벤트 생성 및 전송
         - 자신을 구독하고 있는 클라이언트에게 비동기적으로 데이터를 전송할 수 있다.
         - 데이터는 utf-8로 인코딩된 텍스트 데이터만 가능
         - 서로 다른 이벤트는 개행 문자 두개(\n\n)로 구분
@@ -80,7 +80,7 @@
 
 ## WebSocket
 ![](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FdDiLTo%2FbtrG4Iebgdo%2F8KL22qu1Iu4rQ1YJlziWY1%2Fimg.png)
-- `서버` <-> `클라이언트`로 `양방향`으로 연속적 연결을 지원하는 기술
+- `서버` \<\-\> `클라이언트`로 `양방향`으로 연속적 연결을 지원하는 기술
 - WebSocket이 연결되면 클라이언트 혹은 서버에서 연결을 종료할 떄 까지 연결이 지속된다.
 - 빨간색 `Opening Handshake` / 노란색 `Data Transfer` / 보라색 `Closing Handshake`
 - Handshake
