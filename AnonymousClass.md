@@ -22,7 +22,7 @@ class KiaCar extends Car {
 public class Main {
     public static void main(String[] args) {
         Car car = new KiaCar();
-        car.engineStart();
+        car.engineStart();익명 객체(클래스)와  람다
     }
 }
 ~~~
@@ -229,7 +229,7 @@ public class Main {
 - 람다식 문법과 잘 어울림
 - 단, 람다식 익명 클래스(객체)는 아래 제약이 존재
     - 인터페이스로만 구현 가능
-        - 때문에 함수형 문법을 지원하는 자바 FunctionalInterface는 사용 가능
+        - 때문에 함수형 문법을 지원하는 자바 Functional Interface는 사용 가능
         - 하나의 추상 메서드만 선언되어 있는 인터페이스만 가능
             - default 메서드는 제외
 
