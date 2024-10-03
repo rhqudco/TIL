@@ -174,3 +174,6 @@ JDK 동적 프록시를 사용하므로써 프록시 적용 대상 객체만큼 
 아래 그림(JDK 동적 프록시 도입 후)에서 점선은 개발자가 직접 만드는 클래스가 아닌 JDK가 만들어 주는 클래스다.
 
 <img width="943" alt="image" src="https://github.com/user-attachments/assets/7b5f29c9-9798-4422-9230-26c620bfa6cb">
+
+
+__출처: 김영한 지식공유자의 스프링 핵심 원리 고급편__

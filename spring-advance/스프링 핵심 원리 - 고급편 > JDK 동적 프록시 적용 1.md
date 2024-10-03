@@ -107,3 +107,6 @@ public class ProxyApplication {
 <img width="761" alt="image" src="https://github.com/user-attachments/assets/fcd36fea-c26d-41d2-8784-a8e10d2b15e1">
 
 그림이 자세하기 때문에 그림을 통해 의존 관계를 파악하고 어떻게 돌아가는지 알기 쉽기 때문에 코멘트는 하지 않겠다.
+
+
+__출처: 김영한 지식공유자의 스프링 핵심 원리 고급편__
