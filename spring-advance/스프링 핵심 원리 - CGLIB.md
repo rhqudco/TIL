@@ -93,9 +93,10 @@ public class CglibTest {
   - 프록시를 생성한다. 
   - 앞서 설정한 `enhancer.setSuperclass(ConcreteService.class)`에서 지정한 클래스를 상속 받아서 프록시가 만들어진다.
 
-- ConcreteService$$EnhancerByCGLIB$$25d6b0e3
+- `ConcreteService$$EnhancerByCGLIB$$25d6b0e3`
   - CGLIB가 생성한 클래스 이름
-  - 대상클래스$$EnhancerByCGLIB$$임의코드 규칙으로 생성
+  - `대상클래스$$EnhancerByCGLIB$$`
+임의코드 규칙으로 생성
 
 <img width="956" alt="image" src="https://github.com/user-attachments/assets/3a15d766-a743-419a-ac00-eb875fd35868">
 
