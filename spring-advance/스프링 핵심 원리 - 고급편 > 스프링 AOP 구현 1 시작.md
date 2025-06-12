@@ -109,7 +109,7 @@ hello.aop.order.OrderRepository          : [orderRepository 실행]
 	- `void`: 반환 값 정보
 	- `hello.aop.order.OrderService.orderItem(String)`: 패키지와 클래스, 메서드 이름 및 인자 정보
 
-![[./images/Pasted_image_20250612234304.png]]
+![](./images/Pasted_image_20250612234304.png)
 
 
 ```
