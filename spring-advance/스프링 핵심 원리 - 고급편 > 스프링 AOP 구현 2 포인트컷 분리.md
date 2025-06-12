@@ -36,4 +36,20 @@ public class AspectV2 {
 		- 이름 그대로 주문과 관련된 모든 기능을 대상으로 하는 포인트컷
 	- `@Around` 어드바이스에서는 포인트컷을 직접 지정해도 되지만, 포인트컷 시그니처를 사용해도 된다.
 		- 여기서는 `@Around("allOrder()")`를 사용한다.
-	- `private`, `public`같은 접근 제어자는 내부에서만 사용하면 `private`을 사용해도 되지만, 
+	- `private`, `public`같은 접근 제어자는 내부에서만 사용하면 `private`을 사용해도 되지만, 다른 애스팩트에서 참고하려면 `public`을 사용해야 한다.
+
+#### AopTest - 수정
+
+```java
+@Slf4j  
+//@Import(AspectV1.class)  
+@Import(AspectV2.class)  
+@SpringBootTest  
+public class AopTest {
+...
+}
+```
+
+- 실행 결과 이전과 동일한 동작을 한다.
+
+__출처: 김영한 지식공유자의 스프링 핵심 원리 고급편__
