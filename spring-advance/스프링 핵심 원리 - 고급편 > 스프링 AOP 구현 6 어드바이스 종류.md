@@ -209,9 +209,9 @@ public void doBefore(ProceedingJoinPoint joinPoint) {
  log.info("[before] {}", joinPoint.getSignature());
 }
 ```
-이 코드는 타켓을 호출하지 않는 문제가 있다. 
-이 코드를 개발한 의도는 타켓 실행 전에 로그를 출력하는 것이다. 그런데 `@Around`는 항상 `joinPoint.proceed()`를 호출해야 한다.
-만약 실수로 호출하지 않으면 타켓이 호출되지 않는 치명적인 버그가 발생한다.
+이 코드는 타겟을 호출하지 않는 문제가 있다. 
+이 코드를 개발한 의도는 타겟 실행 전에 로그를 출력하는 것이다. 그런데 `@Around`는 항상 `joinPoint.proceed()`를 호출해야 한다.
+만약 실수로 호출하지 않으면 타겟이 호출되지 않는 치명적인 버그가 발생한다.
 
 다음 코드를 보자.
 ```java
