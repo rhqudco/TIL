@@ -92,3 +92,6 @@ hello.aop.order.aop.AspectV5Order        : [리소스 릴리즈] void hello.aop.
 실행 결과 확인 시 트랜잭션 어드바이스가 먼저 실행되는 것이 보인다.
 
 ![](./images/Pasted_image_20250615234349.png)
+
+
+__출처: 김영한 지식공유자의 스프링 핵심 원리 고급편__
