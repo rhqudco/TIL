@@ -192,5 +192,5 @@ memberServiceImpl Proxy = class hello.aop.member.MemberServiceImpl$$SpringCGLIB$
 [@args] String hello.aop.member.MemberServiceImpl.external(MemberDTO)
 ```
 
-s
+
 __출처: 김영한 지식공유자의 스프링 핵심 원리 고급편__
