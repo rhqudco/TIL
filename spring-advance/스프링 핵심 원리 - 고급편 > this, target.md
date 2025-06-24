@@ -100,7 +100,8 @@ public class ThisTargetTest {
   }  
   
   @Slf4j  
-  @Aspect  static class ThisTargetAspect {  
+  @Aspect
+  static class ThisTargetAspect {  
   
     //부모 타입 허용  
     @Around("this(hello.aop.member.MemberService)")  
@@ -117,7 +118,9 @@ public class ThisTargetTest {
     }  
   
     //this: 스프링 AOP 프록시 객체 대상  
-    //JDK 동적 프록시는 인터페이스를 기반으로 생성되므로 구현 클래스를 알 수 없음    //CGLIB 프록시는 구현 클래스를 기반으로 생성되므로 구현 클래스를 알 수 있음    @Around("this(hello.aop.member.MemberServiceImpl)")  
+    //JDK 동적 프록시는 인터페이스를 기반으로 생성되므로 구현 클래스를 알 수 없음
+    //CGLIB 프록시는 구현 클래스를 기반으로 생성되므로 구현 클래스를 알 수 있음
+    @Around("this(hello.aop.member.MemberServiceImpl)")  
     public Object doThis(ProceedingJoinPoint joinPoint) throws Throwable {  
       log.info("[this-impl] {}", joinPoint.getSignature());  
       return joinPoint.proceed();  

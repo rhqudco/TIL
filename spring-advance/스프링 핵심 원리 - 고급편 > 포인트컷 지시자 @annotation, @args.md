@@ -47,7 +47,8 @@ public class AtAnnotationTest {
   }  
   
   @Slf4j  
-  @Aspect  static class AtAnnotationAspect {  
+  @Aspect
+  static class AtAnnotationAspect {  
   
     @Around("@annotation(hello.aop.member.annotation.MethodAop)")  
     public Object doAtAnnotation(ProceedingJoinPoint joinPoint) throws Throwable {  
@@ -104,7 +105,8 @@ public class AtArgsTest {
   }  
   
   @Slf4j  
-  @Aspect  static class AtArgsAspect {  
+  @Aspect
+  static class AtArgsAspect {  
   
     @Around("execution(* hello.aop.member..*(..)) && @args(hello.aop.member.annotation.ClassAop)")  
     public Object doAtArgs(ProceedingJoinPoint joinPoint) throws Throwable {  
