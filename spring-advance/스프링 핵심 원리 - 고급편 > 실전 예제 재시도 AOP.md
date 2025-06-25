@@ -123,10 +123,10 @@ __실행 결과__
 [retry] try count= 1/4
 
 [trace] void hello.aop.exam.ExamService.request(String) args = [data4]
-[trace] String hello.aop.exam.ExamRepository.save(String) args = [data4]
+[trace] String hello.aop.exam.ExamRepository.save(String) args = [data4] // 예외 상황 진입
 [retry] String hello.aop.exam.ExamRepository.save(String) retry=@hello.aop.exam.annotation.Retry(4)
-[retry] try count= 1/4
-[retry] try count= 2/4
+[retry] try count= 1/4 // seq는 5인 상태 (retry count가 아닌, try count -> 즉, data4 시점)
+[retry] try count= 2/4 // 이때 proceed() 하여 seq는 6이 되어 성공
 ```
 
 > 참고
