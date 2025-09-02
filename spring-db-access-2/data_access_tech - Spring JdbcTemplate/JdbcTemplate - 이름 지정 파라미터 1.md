@@ -78,7 +78,7 @@ public class JdbcTemplateRepositoryV2 implements ItemRepository {
   @Override  
   public Item save(Item item) {  
     String sql = "insert into item (item_name, price, quantity) values (:itemName, :price, :quantity)";  
-    SqlParameterSource param = new BeanPropertySqlParameterSource(item); // 인자로 받는 클래스의 필드 이름으로 파라미터 매핑  
+    SqlParameterSource param = new BeanPropertySqlParameterSource(item); // 인자로 받는 클래스의 자바빈 프로퍼티 규약을 통해 파라미터 객체 생성 (getXXX() -> XXX)
     KeyHolder keyHolder = new GeneratedKeyHolder();  
     template.update(sql, param, keyHolder);  
     Long key = keyHolder.getKey().longValue();  
@@ -117,7 +117,7 @@ public class JdbcTemplateRepositoryV2 implements ItemRepository {
   public List<Item> findAll(ItemSearchCond cond) {  
     Integer maxPrice = cond.getMaxPrice();  
     String itemName = cond.getItemName();  
-    SqlParameterSource param = new BeanPropertySqlParameterSource(cond); // 인자로 받는 클래스의 필드 이름으로 파라미터 매핑  
+    SqlParameterSource param = new BeanPropertySqlParameterSource(cond); // 인자로 받는 클래스의 자바빈 프로퍼티 규약을 통해 파라미터 객체 생성 (getXXX() -> XXX)
   
     String sql = "select id, item_name, price, quantity from item"; //동적 쿼리  
   
