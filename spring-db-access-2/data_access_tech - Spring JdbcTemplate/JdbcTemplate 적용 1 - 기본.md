@@ -76,32 +76,32 @@ public class JdbcTemplateRepositoryV1 implements ItemRepository {
     String itemName = cond.getItemName();  
     Integer maxPrice = cond.getMaxPrice();  
   
-    String sql = "select id, item_name, price, quantity from item";  
+    String sql = "select id, item_name, price, quantity from item"; //동적 쿼리  
   
-    // 동적 쿼리  
     if (StringUtils.hasText(itemName) || maxPrice != null) {  
       sql += " where";  
     }  
   
     boolean andFlag = false;  
-    List<Object> params = new ArrayList<>();  
+  
+    List<Object> param = new ArrayList<>();  
   
     if (StringUtils.hasText(itemName)) {  
-      sql += "item_name like concat ('%', '?', '%')";  
-      params.add(itemName);  
+      sql += " item_name like concat('%',?,'%')";  
+      param.add(itemName);  
       andFlag = true;  
     }  
   
     if (maxPrice != null) {  
       if (andFlag) {  
-        sql += "and";  
+        sql += " and";  
       }  
       sql += " price <= ?";  
-      params.add(maxPrice);  
+      param.add(maxPrice);  
     }  
   
-    log.info("sql = {}", sql);  
-    return template.query(sql, itemRowMapper(), params.toArray());  
+    log.info("sql={}", sql);  
+    return template.query(sql, itemRowMapper(), param.toArray());  
   }  
   
   private RowMapper<Item> itemRowMapper() {  
@@ -180,4 +180,4 @@ while(resultSet이 끝날 때 까지) {
 }
 ```
 
-__출처: 인프런 김영한 지식공유자님의 강의 - 스프링 DB 1편__
+__출처: 인프런 김영한 지식공유자님의 강의 - 스프링 DB 2편__

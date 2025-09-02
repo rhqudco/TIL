@@ -35,4 +35,4 @@ runtimeOnly 'com.h2database:h2'
 
 JdbcTemplate은 `spring-jdbc`라이브러리만 추가하면 된다. 별도의 추가 설정 과정은 없다.
 
-__출처: 인프런 김영한 지식공유자님의 강의 - 스프링 DB 1편__
+__출처: 인프런 김영한 지식공유자님의 강의 - 스프링 DB 2편__
