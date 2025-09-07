@@ -61,7 +61,7 @@ itemMapper class=class com.sun.proxy.$Proxy57
 - 원래 마이바티스를 사용하려면 더 번잡한 코드를 거쳐야 하는데, 이런 부분을 인터페이스 하나로 매우 깔끔하고 편리하게 사용할 수 있다.
 - 매퍼 구현체는 예외 변환까지 처리해준다. MyBatis에서 발생한 예외를 스프링 예외 추상화인 `DataAccessException`에 맞게 변환해서 반환해 준다.
 	- JdbcTemplate이 제공하는 예외 변환 기능을 여기서도 제공한다고 이해하면 된다.
-	- 따로 설정하지 않아도, Spring에서 제공하는 DataAccessException에 맞게 변환해서 반환해 준다.
+	- 따로 설정하지 않아도, Spring에서 제공하는 DataAccessException에 맞게 변환해서 반환해 준다. 
 
 **정리**
 - 매퍼 구현체 덕분에 마이바티스를 스프링에 편리하게 통합해서 사용할 수 있다.
