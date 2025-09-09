@@ -22,4 +22,35 @@ implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 따라서 해당 라이브러리 의존관계를 제거해도 된다.
 참고로 `mybatis-spring-boot-starter` 도 `spring-boot-starter-jdbc`를 포함하기 때문에 제거해도 된다.
 
+다음과 같은 라이브러리가 추가된다.  
+- `hibernate-core`: JPA 구현체인 하이버네이트 라이브러리
+- `jakarta.persistence-api`: JPA 인터페이스
+- `spring-data-jpa`: 스프링 데이터 JPA 라이브러리
+
+`application.properties`에 다음 설정을 추가하자. (main, test)
+```
+# JPA log  
+logging.level.org.hibernate.SQL=DEBUG  
+logging.level.org.hibernate.type.descriptor.sql.BasicBinder=TRACE
+```
+- `org.hibernate.SQL=DEBUG`
+	- 하이버네이트가 생성하고 실행하는 SQL을 확인할 수 있다.
+- `org.hibernate.type.descriptor.sql.BasicBinder=TRACE`
+	- SQL에 바인딩 되는 파라미터를 확인할 수 있다.
+- `spring.jpa.show-sql=true`
+	- 이런 설정도 있다.
+	- 이전 설정은 `logger`를 통해서 SQL이 출력된다.
+	- 이 설정은 `System.out` 콘솔을 통해서 SQL이 출력된다. (권장하지 않음)
+
+**스프링 부트 3.0**
+스프링 부트 3.0 이상을 사용하면 하이버네이트 6 버전이 사용되는데, 로그 설정 방식이 달려졌다. 다음과 같이 로그를 설정해야 한다. 
+
+```properties
+#JPA log
+logging.level.org.hibernate.SQL=DEBUG
+logging.level.org.hibernate.orm.jdbc.bind=TRACE
+```
+
+
+
 __출처: 인프런 김영한 지식공유자님의 강의 - 스프링 DB 2편__
